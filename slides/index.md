@@ -1,2 +1,3 @@
-
-# Managing Responsive Image Display Variations with Sass
+## Managing
+# Responsive Image Display Variations
+## with Sass
