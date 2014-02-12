@@ -1,0 +1,23 @@
+<h2>all in together</h2>
+
+<pre><code>%proportions-article {
+    @include calc-proportions-inline($column-width-sm);
+    @include breakpoint($bp-smed) {
+        @include calc-proportions-inline($column-width-smed);
+    }
+    @include breakpoint($bp-med) {
+        @include calc-proportions-inline($column-width-med);
+    }
+}</code></pre>
+<pre><code>%proportions-embedded-cinematic {
+    @include calc-proportions-cinematic($column-width-sm);
+    @include breakpoint($bp-smed) {
+        @include calc-proportions-cinematic($column-width-sm);
+    }
+    @include breakpoint($bp-med) {
+        @include calc-proportions-cinematic($column-width-smed);
+    }
+}</code></pre>
+<pre><code>$column-width-sm     : 85;
+$column-width-smed   : 73;
+$column-width-med    : 55;</code></pre>

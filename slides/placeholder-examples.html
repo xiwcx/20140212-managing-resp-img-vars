@@ -1,0 +1,14 @@
+<pre><code>@include breakpoint ($bp-until-smed) {
+    // Small screen, full width placeholders
+    %ii_sm--full-screen {
+        @include calc-proportions-cinematic( $width-sm );
+    }
+
+    // Small screen, sub column width placeholders
+
+    %ii_sm--sub-column {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}</code></pre>
