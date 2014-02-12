@@ -90,6 +90,19 @@ module.exports = (grunt) ->
                     filter: 'isFile'
                 }]
 
+        buildcontrol:
+
+            options:
+                dir: 'dist'
+                commit: true
+                push: true
+                message: 'Built %sourceName% from commit %sourceCommit%
+                    on branch %sourceBranch%'
+
+            pages:
+                options:
+                    remote: 'git@github.com:xiwcx/20140212-managing-resp-img-vars.git'
+                    branch: 'gh-pages'
 
     # Load all grunt tasks.
     require('load-grunt-tasks')(grunt)
@@ -112,7 +125,7 @@ module.exports = (grunt) ->
 
     grunt.registerTask 'test',
         '*Lint* javascript and coffee files.', [
-            'coffeelint'
+            # 'coffeelint'
             'jshint'
         ]
 
@@ -136,4 +149,9 @@ module.exports = (grunt) ->
     grunt.registerTask 'default', [
         'test'
         'server'
+    ]
+
+    grunt.registerTask 'deploy', [
+        'dist'
+        'buildcontrol:pages'
     ]
